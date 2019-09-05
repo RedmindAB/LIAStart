@@ -1,0 +1,13 @@
+# Maven build
+**/target/
+
+# IntelliJ IDEA
+/.idea
+*.iml
+
+# Eclipse
+**/.metadata/
+**/.recommenders/
+**/.settings/
+**/.project/
+**/.classpath
