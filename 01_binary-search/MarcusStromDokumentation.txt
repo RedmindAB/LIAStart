@@ -1,0 +1,28 @@
+I have 3 solutions.
+1. My own first quick solution, the search is based on a while loop that goes through a continously halving amount of numbers in an array. As long as that length of numbers is above 1 we repeat the loop (or find the key).
+2. I tried a recursive version that during every halving of the array sends the remaining array to itself, and once the method results in either finding the key (or its' absence) it returns the key (or -1 for no show).
+3. I had troubles coming up with a third type of search, so I slightly cheated by googling suggestions and instructions. I did NOT copy, or even look at, any code online but I found a step by step instructions that I then made my own version of the search from.
+
+My undoubtly best solution is my third one, which I got inspiration for from online. Not because it's optimized by better programmers, but because as a coder I will always find great solutions online. And as long as I understand them it will always be the most efficient and educational to seek the expertise of others.
+It works by checking the distance from bottom-search to top-search, which is similar to my own range-loop but definitely quicker.
+
+My first algorithm is acceptable but it has quite a few "patches" to make it work because of original flawed design. I could probably create a better version of it  later on now that I've got some experience with binary searches. I'd argue it's my worst because it looks a bit messy with all the "patch-work".
+
+My second algorithm is nicer looking but slower because I actually  make new arrays in it with [array2 = Arrays.copyOfRange(values,mid,values.length);] which slows things down.
+
+I found the whole things suitable difficult, but I could perhaps have used some more time to finish up. Especially since our education doesn't really go into algorithms in any depth. This is for example the first time we've (during our lectures at least) worked with searching.
+
+I adjusted the test file so that every time it checks an array for a number; all 3 methods are tested and only if they all return the same result will the test pass. 
+
+Lastly, in my main java-class I also tried making a short function to measure the speed of my algorithms. Sadly maven had some problems with running these resource-intensive tests and prevented me from testing more than a few thousand arrays simultaneously and I don't have the time to find the issue.
+But as it currently stands, my java-file has a main-part which when run will try all 3 search algorithms a thousand times each, giving the following print:
+
+Now we test chop1, my first made search
+Performing my chop1 method 1000 times takes 32ms
+Now we test chop2, my second made search
+Performing my chop2 method 1000 times takes 32ms
+Now we test chop3, my third made search
+Performing my chop3 method 100000 times takes 31ms
+
+
+

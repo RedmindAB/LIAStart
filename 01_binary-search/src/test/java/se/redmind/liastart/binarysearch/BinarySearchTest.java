@@ -7,8 +7,10 @@ import org.junit.Test;
 public class BinarySearchTest {
 	
 	private BinarySearch search = new BinarySearch() {
+            //this method is redundant but I keep it here for future possible changes
 		public int chop(int key, int[] values) {
-			return -1;
+			
+                        return -1;
 		}
 	};
 
@@ -35,10 +37,30 @@ public class BinarySearchTest {
 		assertEquals(-1, chop(4, new int[] { 1, 3, 5, 7 }));
 		assertEquals(-1, chop(6, new int[] { 1, 3, 5, 7 }));
 		assertEquals(-1, chop(8, new int[] { 1, 3, 5, 7 }));
-	}
+                assertEquals(33, chop(33, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99}));
+                assertEquals(-1, chop(33, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31, 32,  34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99}));
+                assertEquals(97, chop(97, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99}));
+	
+        }
 
 	private int chop(int key, int[] values) {
-		return search.chop(key, values);
+            
+            //make an instance of my java class that holds my search algorithms
+            BinarySearchMarcusS bsm = new BinarySearchMarcusS();
+            int firstSearchMethod, secondSearchMethod, thirdSearchMethod;
+            
+            //below I get the results back from all three types of searches
+            firstSearchMethod=bsm.chop1(key, values);
+            secondSearchMethod=bsm.chop2(key, values);
+            thirdSearchMethod=bsm.chop3(key, values);
+            
+            
+            //if any of the search methods don't return the same number
+            //then something is wrong, and I return a wrong value
+            if((firstSearchMethod!=secondSearchMethod) && (firstSearchMethod!= thirdSearchMethod)){
+                return -5;
+            }
+            return firstSearchMethod;
 	}
 
 }
