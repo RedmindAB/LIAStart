@@ -11,13 +11,10 @@ public class BinarySearchTest {
         
         public int chop(int key, int[] values) {
 
-//            Arrays.sort(values);
             int result = Arrays.binarySearch(values, key);
-            if (result <= -1) {
-                return -1;
-            } else {
-                return result;
-            }
+            
+            return (result <= -1) ? -1 : result;
+
         }
 
     };

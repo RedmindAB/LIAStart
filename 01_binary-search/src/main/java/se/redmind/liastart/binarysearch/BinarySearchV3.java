@@ -14,11 +14,12 @@ public interface BinarySearchV3 {
      * 
      * third version I use recursion to check the key is on which side of the arrays element
      * this method is a little complicated. I take a bit more time to test code
+     * I have updated method. I got inspiration from version 2.
      * @param key for search
      * @param values for the searching source
      * @return found index or -1 for out of bound
      */
 
-    int chop3(int key, int[] values, int[] origin);
+    int chop3(int key, int[] values, int start, int end);
 
 }
