@@ -22,6 +22,9 @@ public class BinarySearchV3Test {
             if (start > end) {
                 return -1;
             }
+            if (values==null){
+                return -1;
+            }
 
             if (key > values[mid]) {
                 return chop(key, values, mid + 1, end);
