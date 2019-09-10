@@ -4,13 +4,48 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class BinarySearchTest {
-	
+
 	private BinarySearch search = new BinarySearch() {
+
 		public int chop(int key, int[] values) {
+			int left = 0;
+			int right = values.length - 1;
+			while(left <= right){
+				int mid = left + ((right - left) / 2);
+				if(values[mid] == key){
+					return mid;
+				}
+				else if(key < values[mid]){
+					right = mid - 1;
+				}
+				else{
+					left = mid + 1;
+				}
+			}
+			return -1;
+		}
+
+	};
+
+	private BinarySearch search2 = new BinarySearch() {
+		public int chop(int key, int[] values) {
+			for (int i = 0; i < values.length; i++)
+				if (values[i] == key)
+					return i;
+
 			return -1;
 		}
 	};
+	private BinarySearch search3 = new BinarySearch() {
+		public int chop(int key, int[] values) {
+			int index = Arrays.binarySearch(values, key);
+			return (index < 0) ? -1 : index;
+		}
+	};
+
 
 	@Test
 	public void test() {

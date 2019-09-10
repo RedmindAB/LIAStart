@@ -1,0 +1,14 @@
+What makes it good/bad?
+good = short and easy to understand.
+
+bad = long and complicated code which is hard to understand.
+
+Did you need help, with what?
+yes i had to read the binarysearch method documentation and also i used youtube
+for help with the binarysearch since im not familiar with it.
+
+Was it easy or hard?
+it was and average assigment, a really good practise.
+
+Did you do any improvements to anything?
+no i stuck with what worked but i tried different methods and experimented.
