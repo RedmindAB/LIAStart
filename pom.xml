@@ -4,6 +4,7 @@
   <artifactId>liastart</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+
   <modules>
   	<module>01_binary-search</module>
   	<module>02_conways-game-of-life</module>
