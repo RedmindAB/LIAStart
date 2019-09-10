@@ -1,29 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package se.redmind.liastart.binarysearch;
 
+import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-public class BinarySearchTest {
+/**
+ *
+ * @author xingao
+ */
+public class BinarySearchV3Test {
 
-    private BinarySearch search = new BinarySearch() {
-        public int chop(int key, int[] values) {
-            if (values == null) {
+    private BinarySearchV3 search = new BinarySearchV3() {
+
+        private int chop(int key, int[] values, int start, int end) {
+            int mid = start + (end - start) / 2;
+            if (start > end) {
                 return -1;
             }
-            int start = 0;
-            int end = values.length - 1;
-            while (start <= end) {
-                int mid = start + (end - start) / 2;
-                if (key > values[mid]) {
-                    start = mid + 1;
-                } else if (key < values[mid]) {
-                    end = mid - 1;
-                } else {
-                    return mid;
-                }
+
+            if (key > values[mid]) {
+                return chop(key, values, mid + 1, end);
+            } else if (key < values[mid]) {
+                return chop(key, values, start, mid - 1);
+            } else {
+                return mid;
             }
-            return -1;
+        }
+
+        public int chop(int key, int[] values) {
+            return chop(key, values, 0, values.length - 1);
         }
     };
 
