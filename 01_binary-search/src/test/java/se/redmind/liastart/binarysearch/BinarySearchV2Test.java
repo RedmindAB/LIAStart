@@ -22,13 +22,18 @@ public class BinarySearchV2Test {
             int end = values.length-1;
             int mid ;
             while(start <= end){
-                mid = (start+end)/2;
-                if(key > values[mid]){
-                    start = mid + 1;
-                } else if(key == values[mid]){
-                    return mid;
+                mid = (start+end+1)/2;
+                if(start == end){
+                    if(key == values[start]) return start;
+                    else return -1;
+                }
+                if(key < values[mid-1]){
+                    if(mid == 1) return -1;
+                    else end = mid - 1;
+                } else if(key == values[mid-1]){
+                    return mid-1;
                 } else{
-                    end = mid -1;
+                    start = mid;
                 }
             }
             return -1;
