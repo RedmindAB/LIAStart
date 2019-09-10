@@ -1,5 +1,6 @@
 package se.redmind.liastart.binarysearch;
 
+import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -7,31 +8,41 @@ import org.junit.Test;
 public class BinarySearchTest {
 
     private BinarySearch search = new BinarySearch() {
+
         public int chop(int key, int[] values) {
 
-            int start = 0;
-            int end = values.length - 1;
-            int mid;
-            
-            while (start <= end) {
+            int binSearch = Arrays.binarySearch(values, key);
 
-                mid = (start + end) / 2;
-                
-                if (key > values[mid]) {
-                    start = mid + 1;
-                    System.out.println("Checking upper half.");
-                    
-                } else if (key == values[mid]) {
-                    System.out.println("Target exists! Target is at index: " + mid);
-                    return mid;
-                } else {
-                    end = mid - 1;
-                    System.out.println("Checking lower half.");
-                }
-            }
+            int result = (binSearch <= -1) ? -1 : binSearch;
 
-            return -1;
+            return result;
         }
+
+//        public int chop(int key, int[] values) {
+//
+//            int start = 0;
+//            int end = values.length - 1;
+//            int mid;
+//            
+//            while (start <= end) {
+//
+//                mid = (start + end) / 2;
+//                
+//                if (key > values[mid]) {
+//                    start = mid + 1;
+//                    System.out.println("Checking upper half.");
+//                    
+//                } else if (key == values[mid]) {
+//                    System.out.println("Target exists! Target is at index: " + mid);
+//                    return mid;
+//                } else {
+//                    end = mid - 1;
+//                    System.out.println("Checking lower half.");
+//                }
+//            }
+//
+//            return -1;
+//        }
     };
 
     @Test
