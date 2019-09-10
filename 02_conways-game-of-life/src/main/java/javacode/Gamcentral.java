@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -28,16 +29,18 @@ public class Gamcentral extends JFrame implements ActionListener {
     JPanel totalP = new JPanel();
     JPanel again = new JPanel();
     JPanel pane = new JPanel();
-    JButton shuffle = new JButton("Change");
+    JTextArea area = new JTextArea("Click buttons to create life."+ "\nClick 'next' to see happening!");
     JButton next = new JButton("Next");
     JButton[][] button = null;
+    Color color = new Color(238, 238, 238);
 
     public Gamcentral() {
-        int n = 6;
+        int n = 10;
         button = createButton(n);
         totalP.setLayout(new BorderLayout());
         again.setLayout(new GridLayout(10, 1));
         again.setBorder(new EmptyBorder(5, 5, 5, 5));
+        again.add(area);
         again.add(next);
         pane.setLayout(new GridLayout(n, n));
 
@@ -82,7 +85,7 @@ public class Gamcentral extends JFrame implements ActionListener {
                     if(first == 1){
                         button[i][j].setBackground(Color.red);
                     } else{
-                        button[i][j].setBackground(Color.lightGray);
+                        button[i][j].setBackground(color);
                     }
                 }
             }
@@ -112,10 +115,12 @@ public class Gamcentral extends JFrame implements ActionListener {
             case "1":
                 text = 0 + last;
                 jb.setText(text);
+                jb.setBackground(color);
                 break;
             default:
                 text = 1 + last;
                 jb.setText(text);
+                jb.setBackground(Color.red);
         }
 
     }
@@ -126,6 +131,7 @@ public class Gamcentral extends JFrame implements ActionListener {
             for (int j = 0; j < n; j++) {
                 String ss = "00";
                 button[i][j] = new JButton(ss);
+                button[i][j].setBackground(new Color(238,238,238));
                 button[i][j].setFont(new Font("Arial", Font.PLAIN, 20));
             }
         }
