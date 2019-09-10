@@ -11,8 +11,8 @@ package se.redmind.liastart.binarysearch;
  */
 public interface BinarySearchV2 {
     /**
-     * second version I use for loop to check the key is equal arrays element
-     * this method needs to think out index out of bound exception
+     * second version I change to use index to check which side is the key located
+     * I got this method from mob programming, the code is simple and smart !
      * @param key for search
      * @param values for the searching source
      * @return found index or -1 for out of bound
