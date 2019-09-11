@@ -1,21 +1,24 @@
 package se.redmind.liastart.conway;
 
+import javafx.scene.layout.GridPane;
+
 public class GameController {
 
-    public GameController() {
-        
+    Board board;
+    CellDAO cellDAO;
+    Cell[] allCells;
 
-        /*
-        - Create board
-        - Draw visual board on screen
-        - Create model of cell
-        - Randomly place n live cells
-        - Start game.
-         */
-    }
-    
-    public void startGame() {
-        // initGame
+    public GameController(Board board, CellDAO cellDAO) {
+        this.board = board;
+        this.cellDAO = cellDAO;
     }
 
+    public void paintBoard(GridPane gridPane) {
+
+        Cell[] allCells = cellDAO.getAllCells();
+
+        for (Cell c : allCells) {
+            gridPane.add(c, c.getX(), c.getY());
+        }
+    }
 }

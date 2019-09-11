@@ -2,17 +2,17 @@ package se.redmind.liastart.conway;
 
 public class Board {
 
-    private final int x = 24;
-    private final int y = 12;
+    private final int columns = 24;
+    private final int rows = 12;
 
     public Board() { }
 
-    public int getX() {
-        return x;
+    public int getColumns() {
+        return columns;
     }
 
-    public int getY() {
-        return y;
+    public int getRows() {
+        return rows;
     }
 
 }

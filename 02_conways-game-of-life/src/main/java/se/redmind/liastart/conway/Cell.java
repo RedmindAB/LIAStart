@@ -1,6 +1,5 @@
 package se.redmind.liastart.conway;
 
-import java.util.Random;
 import javafx.scene.control.Button;
 
 public class Cell extends Button {
