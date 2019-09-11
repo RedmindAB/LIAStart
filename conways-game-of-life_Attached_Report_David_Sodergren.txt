@@ -1,0 +1,15 @@
+1. Are you happy with your code?
+	a. Is it easy to read?
+	    It is always to tell whether your own code is easy to read or not. But I am pretty happy with this code
+	    that I wrote for this project.
+	b. Is it easy to test?
+	    I have set up some tests for both the Cell and the ChessGrid classes and that worked fine. I did not have the time
+	    to do some testing for the Rules class but I think it should not be to hard to test it.
+	c. Is it DRY?
+	    I think the code is DRY, I cant see anywhere where i repeat any code.
+
+2. What was the hardest thing about this exercise?
+
+    The hardest thing for me was to get started with everything. I think that is usually the case - that once you get started
+    everything goes pretty quick. But it can take so much time to just get started and that was certainly the case here.
+    

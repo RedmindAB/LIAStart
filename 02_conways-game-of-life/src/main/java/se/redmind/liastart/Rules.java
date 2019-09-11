@@ -9,6 +9,12 @@ public class Rules {
     private ArrayList<Cell> toBeChanged = new ArrayList<>();
 
 
+    /*Loops trough all the cells in the game, takes an array of cells as argument.
+    The method checks each cell, then call the method getNeighbours() which gets the neighbour cells and return it as a list of cells.
+    Then it uses that list and call amountOfNeighbourCells() which returns an int amount of neighbour cells that is alive.
+    Then it uses that number to call on decideIfCellShallLive() if the cell itself shall live or not based upon that int amount.
+    Finally, outside the loop it call on changeStateOfCells() which loops trough all the cells and changes their alive state
+    */
     public void playGame(Cell[][] cells){
 
         for (int i = 0; i < cells.length; i++) {
