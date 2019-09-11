@@ -1,0 +1,18 @@
+1. Are you happy with your code?
+
+Yes and no. I think it turned out pretty good. I started out thinking I wanted to do something fancy with streams. Therefore choosing Arraylists instead of 2d arrays, which was the more obvious choice from the start. 
+Turned out that in the end I didn't end up using any streams and my decision complicated some things, I used 2 different ways of expressing the position of the cells on the board among other things. If I was to do this assignment again i would have gone with 2d arrays. 
+
+I feel like the code is read and follow along with. Though as I've described it could have been better.
+
+It don't think it should be that hard to test the code. 
+
+Is it DRY?
+While looking back at the code some things could have been baked into other things and refactored. All things considered I'm pretty happy with what I made whithin the alloted time.
+
+
+2. What was the hardest thing about the exercise?
+
+Just the amount of code that had to be written. Maybe I made it a bit hard on myself by implementing a functioning GUI, because the logic of the game is quite simple and in it self isnt such a big challenge. So maybe fiddling with the GUI was the hardest part, but also really rewarding when it was done. 
+
+
