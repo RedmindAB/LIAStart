@@ -89,7 +89,17 @@ public class Gamcentral extends JFrame implements ActionListener {
                     }
                 }
             }
-            pane.setVisible(true);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if ((button[i][j].getText()).startsWith("1")) {
+                    button[i][j].setForeground(Color.red);
+                } else {
+                    button[i][j].setForeground(color);
+                }
+                
+            }
+        }               pane.setVisible(true);
+            
         });
 
         pane.setPreferredSize(new Dimension(600, 600));
@@ -116,11 +126,13 @@ public class Gamcentral extends JFrame implements ActionListener {
                 text = 0 + last;
                 jb.setText(text);
                 jb.setBackground(color);
+                jb.setForeground(color);
                 break;
             default:
                 text = 1 + last;
                 jb.setText(text);
                 jb.setBackground(Color.red);
+                jb.setForeground(Color.red);
         }
 
     }
@@ -133,6 +145,7 @@ public class Gamcentral extends JFrame implements ActionListener {
                 button[i][j] = new JButton(ss);
                 button[i][j].setBackground(new Color(238,238,238));
                 button[i][j].setFont(new Font("Arial", Font.PLAIN, 20));
+                button[i][j].setForeground(new Color(238,238,238));
             }
         }
         return button;
@@ -302,6 +315,6 @@ public class Gamcentral extends JFrame implements ActionListener {
                     }
                 }
             }
-            pane.setVisible(true);
+                pane.setVisible(true);
     }
 }
