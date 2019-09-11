@@ -52,7 +52,12 @@ public class Cell extends JButton {
     }
 
     public void clickOnCell(){
-        System.out.println("HEEEEJ");
+        if(alive){
+            setAlive(false);
+        }
+        else{
+            setAlive(true);
+        }
     }
 
 
