@@ -1,0 +1,6 @@
+I think my best and simultaneously worst solution is the third one which uses the Arrays class.
+
+Its good because I didn't have to write any extra code, which lets me focus on other tasks. 
+Its sort of a bad solution because I feel like it circumvented the point of the exercice.
+
+I went with this solution because I found it hard to come up with another answer to the problem that differed enough from the first two. 

@@ -11,3 +11,6 @@
 **/.settings/
 **/.project/
 **/.classpath
+/02_conways-game-of-life/GameOfLife/build/
+/02_conways-game-of-life/GameOfLife/dist/
+/02_conways-game-of-life/GameOfLife/nbproject/private/
