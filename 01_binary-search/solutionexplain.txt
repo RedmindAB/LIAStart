@@ -1,0 +1,4 @@
+a. The first version of BinarySearch is fundamental algorithm version. The second version can deal with the situation that there is duplicate elements in the array. This version is aim to find the first index where the key values appears.  All of these three versions has the same time complexity.  But the third recursive version has higher space complexity, i.e.,it needs more storage space. It is not as good as the first two versions.
+b. At first I had no idea how to find three version algorithm. So I search online and get inspiration of recursion. Then I spend a lot of time to think about the third version and think to find the first index of the key values can be regarded as a variation of the searching.
+c. The logic of second version is hard to think out. The situation of boundary is complex. 
+d. I use bitwise operators to replace the mathematics operators. In theory, the speed of execution can be a little more fast. 

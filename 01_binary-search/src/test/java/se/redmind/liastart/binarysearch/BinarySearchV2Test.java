@@ -14,7 +14,7 @@ import org.junit.Test;
  * @author xingao
  */
 public class BinarySearchV2Test {
-
+//To find the first index of the key value in the case that there is duplicate elements
     private BinarySearchV2 search = new BinarySearchV2() {
         public int chop(int key, int[] values) {
             if (values == null) {
@@ -25,15 +25,13 @@ public class BinarySearchV2Test {
             while (start <= end) {
                 //use bitwise operators instead of number operators
                 int mid = (start + end) >> 1;
-                if (key > values[mid]) {
-                    start = mid + 1;
-                } else if (key < values[mid]) {
+                if (key <= values[mid]) {
                     end = mid - 1;
                 } else {
-                    return mid;
+                    start = mid + 1;
                 }
             }
-            return -1;
+            return (start <= values.length - 1) && (values[start] == key) ? start : -1;
         }
     };
 
