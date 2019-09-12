@@ -1,4 +1,4 @@
-package se.redmind.liastart.binarysearch;
+package se.redmind.liastart.conways;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
