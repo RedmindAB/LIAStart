@@ -1,0 +1,11 @@
+Are you happy with your code? yes, of course it could have been better.
+
+Is it easy to read? i think it's easy to read.
+
+Is it easy to test? yes
+
+Is it DRY? yes!
+
+What was the hardest thing about this exercise? the algorithm for the ALIVE method.
+
+
