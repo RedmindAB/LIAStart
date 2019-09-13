@@ -5,6 +5,7 @@
  */
 package javacode;
 
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
@@ -30,6 +31,7 @@ public class ComwayGame {
      */
     public ComwayGame() {
         Gamcentral gc = new Gamcentral();
+        
     }
 
     public static void main(String[] args) {
