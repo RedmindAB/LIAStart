@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='socket.io/socket.io.js'></script>
+    <title>Chat App 5001</title>
+</head>
+
+<body>
+
+    <form id="chatForm" style="display: inline-block">
+        <h1>Pink chat</h1>
+        <textarea id="chatArea" name="chatArea" style="width: 550px; height: 400px; background-color: pink;"
+            disabled></textarea>
+        <br>
+        <input type="text" id="userName" name="userName" style="width: 100px;" placeholder="Your name">
+        <input type="text" id="userInput" name="userInput" style="width: 400px;">
+        <button>Send</button>
+    </form>
+
+    <form id="chatForm2" style="display: inline-block">
+        <h1>Blue chat</h1>
+        <textarea id="chatArea2" name="chatArea"
+            style="width: 550px; height: 400px; background-color: rgb(192, 232, 255);" disabled></textarea>
+        <br>
+        <input type="text" id="userName2" name="userName" style="width: 100px;" placeholder="Your name">
+        <input type="text" id="userInput2" name="userInput" style="width: 400px;">
+        <button>Send</button>
+    </form>
+
+    <div id="privateChat">
+
+    </div>
+
+    <script>
+        
+    </script>
+    <script src='script.js'></script>
+    
+    
+</body>
+
+</html>

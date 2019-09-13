@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='socket.io/socket.io.js'></script>
+    <script>
+        //var socket = io.connect('http://localhost')
+        var socket = io('/')
+
+        console.log("WORKING");
+        
+        //var secondChat = io.connect('http://localhost/')
+
+        socket.on('chat2', function (data) {
+            console.log("TEST")
+            E('chatArea2').innerHTML += data.userName + " : " + data.userInput + "\n";
+        })
+
+        socket.on('chat', function (data) {
+            console.log("VI kommer till aisdoaisdh")
+            E('chatArea').innerHTML += data.userName + " : " + data.userInput + "\n";
+        })
+
+        socket.on('pm', function (data) {
+            console.log(data.userName + " : " + data.userInput + " .SocketID: " + data.socketId)
+        })
+
+        function sendMsg(input) {
+            var userInput = E('userInput' + input).value;
+            var userName = E('userName' + input).value;
+
+            var data = {
+                "userName": userName,
+                "userInput": userInput
+            }
+            if (input === "") {
+                socket.emit('userData', data)
+            } else {
+                socket.emit('userData2', data)
+            }
+        }
+
+    </script>
+
+    <title>Chat App 5001</title>
+</head>
+
+<body>
+
+    <form id="chatForm" style="display: inline-block">
+        <h1>Pink chat</h1>
+        <textarea id="chatArea" name="chatArea" style="width: 550px; height: 400px; background-color: pink;"
+            disabled></textarea>
+        <br>
+        <input type="text" id="userName" name="userName" style="width: 100px;" placeholder="Your name">
+        <input type="text" id="userInput" name="userInput" style="width: 400px;">
+        <button>Send</button>
+    </form>
+
+    <form id="chatForm2" style="display: inline-block">
+        <h1>Blue chat</h1>
+        <textarea id="chatArea2" name="chatArea"
+            style="width: 550px; height: 400px; background-color: rgb(192, 232, 255);" disabled></textarea>
+        <br>
+        <input type="text" id="userName2" name="userName" style="width: 100px;" placeholder="Your name">
+        <input type="text" id="userInput2" name="userInput" style="width: 400px;">
+        <button>Send</button>
+    </form>
+
+    <script>
+        function E(id) {
+            return document.getElementById(id);
+        }
+
+        E('chatForm').onsubmit = () => {
+            sendMsg("");
+            E('userInput').value = "";
+            return false;
+        };
+        E('chatForm2').onsubmit = () => {
+            sendMsg(2);
+            E('userInput2').value = "";
+            return false;
+        };
+    </script>
+</body>
+
+</html>
