@@ -4,12 +4,18 @@ import javafx.scene.control.Button;
 
 public class Cell extends Button {
 
-    private boolean live;
+    private boolean alive;
+    private boolean nextState;
     private int x;
     private int y;
+    
+    public Cell(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 
     public Cell(boolean live, int x, int y) {
-        this.live = live;
+        this.alive = live;
         this.x = x;
         this.y = y;
     }
@@ -31,11 +37,27 @@ public class Cell extends Button {
     }
 
     public boolean isLive() {
-        return live;
+        return alive;
     }
 
     public void setLive(boolean live) {
-        this.live = live;
+        this.alive = live;
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public boolean isNextState() {
+        return nextState;
+    }
+
+    public void setNextState(boolean nextState) {
+        this.nextState = nextState;
     }
 
 }

@@ -1,7 +1,5 @@
 package se.redmind.liastart.conway;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Random;
 
 public class CellDAO {
@@ -14,13 +12,12 @@ public class CellDAO {
 
     public CellDAO(Board board) {
         this.board = board;
-        this.columns = board.getColumns();
-        this.rows = board.getRows();
+        this.columns = board.getCOLUMNS();
+        this.rows = board.getROWS();
         this.numberOfCells = columns * rows;
         this.allCells = new Cell[numberOfCells];
 
         createCells();
-        Collections.shuffle(Arrays.asList(allCells));
     }
 
     public void createCells() {
@@ -40,29 +37,6 @@ public class CellDAO {
             }
         }
     }
-
-    public boolean hasNeighbour(Cell cell) {
-
-        int neighbours = 0;
-
-//        for (int i = 0; i < allCells.length - 1; i++) {
-//            
-//            int neighbourX = allCells[i].getX();
-//            int neighbourY = allCells[i].getY();
-//            
-//            if (neighbourX == cell.getX() - 1 || neighbourX == cell.getX() + 1) {
-//                neighbours++;
-//            }
-//            
-//            if (neighbourY == cell.getY() - 1 || neighbourY == cell.getY() + 1) {
-//                neighbours++;
-//            }
-//            
-//        }
-  
-        return true;
-    }
-    
 
     public Cell[] getAllCells() {
         return allCells;

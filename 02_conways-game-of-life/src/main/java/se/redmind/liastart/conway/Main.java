@@ -8,18 +8,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    /*
-    Any live cell with fewer than two live neighbours dies
-    Any live cell with two or three live neighbours lives on
-    Any live cell with more than three live neighbours die
-    Any deal cell with exactly three live neighbours becomes alive
-     */
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws InterruptedException {
 
         GridPane gridPane = new GridPane();
         gridPane.setMinSize(600, 450);
@@ -29,13 +23,18 @@ public class Main extends Application {
 
         Board board = new Board();
         CellDAO cellDAO = new CellDAO(board);
+        Cell[] allCells = cellDAO.getAllCells();
 
-        GameController game = new GameController(board, cellDAO);
-        game.paintBoard(gridPane);
+        GameController game = new GameController(board, allCells, gridPane);
 
-        Scene scene = new Scene(gridPane);
-        stage.setTitle("Conway's Game of Life");
-        stage.setScene(scene);
-        stage.show();
+        // Loop this in some way.
+        while (true) {
+            gridPane = game.paintBoard();
+
+            Scene scene = new Scene(gridPane);
+            stage.setTitle("Conway's Game of Life");
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 }
